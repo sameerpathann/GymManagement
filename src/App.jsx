@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./Components/Header";
 import Video from "./Components/Video";
 import Shadow from "./Components/Shadow";
+import Scection from "./Components/Scection";
 const App = () => {
   return (
     <>
@@ -10,7 +11,7 @@ const App = () => {
         <Shadow />
         <Header />
       </div>
-      {/* <div className="h-[100vh]  bg-red-400"></div> */}
+      <Scection />
     </>
   );
 };
