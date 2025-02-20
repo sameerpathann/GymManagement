@@ -3,6 +3,7 @@ import Header from "./Components/Header";
 import Video from "./Components/Video";
 import Shadow from "./Components/Shadow";
 import Scection from "./Components/Scection";
+import Banner from "./Components/Banner";
 const App = () => {
   return (
     <>
@@ -12,6 +13,7 @@ const App = () => {
         <Header />
       </div>
       <Scection />
+      <Banner />
     </>
   );
 };

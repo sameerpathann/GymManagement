@@ -17,7 +17,7 @@ const Scection = () => {
       </div>
       <div className="w-[100%] h-[70%]  flex flex-wrap justify-between items-center mt-14">
         {classDetails.map((obj, i) => {
-          return <Programstructure obj={obj} />;
+          return <Programstructure key={i} obj={obj} />;
         })}
       </div>
     </div>
