@@ -4,6 +4,7 @@ import Video from "./Components/Video";
 import Shadow from "./Components/Shadow";
 import Scection from "./Components/Scection";
 import Banner from "./Components/Banner";
+import OurClasses from "./Components/OurClasses";
 const App = () => {
   return (
     <>
@@ -14,6 +15,7 @@ const App = () => {
       </div>
       <Scection />
       <Banner />
+      <OurClasses />
     </>
   );
 };
