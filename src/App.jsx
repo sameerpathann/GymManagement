@@ -5,6 +5,7 @@ import Shadow from "./Components/Shadow";
 import Scection from "./Components/Scection";
 import Banner from "./Components/Banner";
 import OurClasses from "./Components/OurClasses";
+import Schedule from "./Components/Schedule";
 const App = () => {
   return (
     <>
@@ -16,6 +17,7 @@ const App = () => {
       <Scection />
       <Banner />
       <OurClasses />
+      <Schedule />
     </>
   );
 };
