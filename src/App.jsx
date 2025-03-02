@@ -6,6 +6,7 @@ import Scection from "./Components/Scection";
 import Banner from "./Components/Banner";
 import OurClasses from "./Components/OurClasses";
 import Schedule from "./Components/Schedule";
+import Trainer from "./Components/Trainer";
 const App = () => {
   return (
     <>
@@ -18,6 +19,7 @@ const App = () => {
       <Banner />
       <OurClasses />
       <Schedule />
+      <Trainer />
     </>
   );
 };
