@@ -3,7 +3,6 @@ import lineimg from "../assets/line-dec.png";
 import TrainerCard from "./TrainerCard";
 import TrainerProfile from "./Hardcore/TrainerProfile";
 const Trainer = () => {
-  console.log(TrainerProfile);
   return (
     <>
       <div className="w-[100%] h-[180vh] px-20 py-20 flex flex-col justify-between items-center">

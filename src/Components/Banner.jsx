@@ -22,7 +22,7 @@ const Banner = () => {
             a nisi luctus imperdiet.
           </p>
           <div>
-            <button className="w-[100%] h-[100%] px-[1.8vw] py-[0.7vw] bg-[#ed563b] mt-3 uppercase text-white font-semibold  text-[1.2vw] cursor-pointer transition-colors duration-[0.4s] hover:bg-[#e56751]">
+            <button className="w-[100%] h-[100%] px-[1.8vw] py-[0.7vw] bg-[#ed563b] mt-3 uppercase text-white font-semibold  text-[1.2vw] cursor-pointer transition-colors duration-[0.4s] hover:bg-[#e56751] border-none outline-none">
               Become a memeber
             </button>
           </div>

@@ -7,6 +7,7 @@ import Banner from "./Components/Banner";
 import OurClasses from "./Components/OurClasses";
 import Schedule from "./Components/Schedule";
 import Trainer from "./Components/Trainer";
+import Footer from "./Components/Footer";
 const App = () => {
   return (
     <>
@@ -20,6 +21,7 @@ const App = () => {
       <OurClasses />
       <Schedule />
       <Trainer />
+      <Footer />
     </>
   );
 };
