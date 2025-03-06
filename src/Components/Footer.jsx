@@ -49,7 +49,7 @@ const Footer = () => {
                   <input
                     type="text"
                     placeholder="message"
-                    className="border w-[100%] h-[60%] border-[gray] text-[1.2vw] text-[gray] px-1 py-1 outline-none"
+                    className="border w-[100%] h-[60%] border-[gray] text-[1.2vw] text-[gray] px-1 outline-none"
                   />
                   <button className="px-3 py-3 bg-[#ed563d] text-white uppercase text-[1vw] border-none outline-none  font-semibold cursor-pointer transition-colors duration-[0.2s] hover:bg-[#ed6d57] w-1/3">
                     Send Message
@@ -62,8 +62,9 @@ const Footer = () => {
         <div className="w-[100%] flex items-center justify-center h-[15%]">
           <p className="text-[1.1vw] w-[33%] text-center">
             Copyright © 2020 Training Studio - Designed by{" "}
-            <span className="text-[#ed563d]"> TemplateMo</span> Distributed by
-            <span className="text-[#ed563d]"> ThemeWagon</span>
+            <span className="text-[#ed563d] cursor-pointer"> TemplateMo</span>{" "}
+            Distributed by
+            <span className="text-[#ed563d] cursor-pointer"> ThemeWagon</span>
           </p>
         </div>
       </div>
