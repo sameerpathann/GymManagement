@@ -1,5 +1,6 @@
 import React from "react";
 import gymVideo from "../assets/gym-video.mp4";
+import { Link } from "react-router-dom";
 const Video = () => {
   return (
     <>
@@ -26,9 +27,14 @@ const Video = () => {
             </h1>
           </div>
           <div className="w-[25%] h-[20%] flex items-center justify-center">
-            <button className="w-[15%] h-[15%] bg-[#ed563b] mt-3 uppercase text-white font-semibold absolute z-40 text-[1.2vw] cursor-pointer transition-colors duration-[0.4s] hover:bg-[#e56751]">
-              Become a memeber
-            </button>
+            <Link
+              to={"/Signup"}
+              className="w-[70%] h-[100%] flex items-center justify-center"
+            >
+              <button className="w-[100%] h-[100%] bg-[#ed563b] uppercase text-white font-semibold  text-[1.2vw] cursor-pointer transition-colors duration-[0.4s] hover:bg-[#e56751]">
+                Become a memeber
+              </button>
+            </Link>
           </div>
         </div>
       </div>

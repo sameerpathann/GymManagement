@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import lineimg from "../assets/line-dec.png";
 import OurClassstructure from "./OurClassstructure";
 import obj from "./Hardcore/TraninerDetails";
+import { Link } from "react-router-dom";
 
 const OurClasses = () => {
   const [isClick, setIsClick] = useState(0);
@@ -22,11 +23,14 @@ const OurClasses = () => {
           <div className="w-[30%] flex flex-col gap-4 h-[100%]">
             <OurClassstructure isClick={isClick} setIsClick={setIsClick} />
             <div className="w-[100%] h-[6vw]">
-              <div className="w-[100%] h-[100%] flex items-center justify-center rounded-md gap-5 bg-[#ed563d] cursor-pointer hover:bg-[#e8644d]">
-                <h1 className="text-[1.6vw] font-semibold text-white">
-                  View All Schedules
-                </h1>
-              </div>
+              <Link to={"/Schedule"}>
+                {" "}
+                <div className="w-[100%] h-[100%] flex items-center justify-center rounded-md gap-5 bg-[#ed563d] cursor-pointer hover:bg-[#e8644d]">
+                  <h1 className="text-[1.6vw] font-semibold text-white">
+                    View All Schedules
+                  </h1>
+                </div>
+              </Link>
             </div>
           </div>
           <div className="w-[65%] h-[100%]">
@@ -46,9 +50,11 @@ const OurClasses = () => {
                 tincidunt lacinia gravida aliquam nunc. Morbi quis erat
                 imperdiet, molestie nunc ut, accumsan diam.
               </p>
-              <button className="uppercase w-[19%] text-[1.2vw] text-white bg-[#ed563d] px-2 py-2 border-none outline-none cursor-pointer hover:bg-[#e8644d]">
-                View Schedule
-              </button>
+              <Link to={"/Schedule"}>
+                <button className="uppercase w-[19%] text-[1.2vw] text-white bg-[#ed563d] px-2 py-2 border-none outline-none cursor-pointer hover:bg-[#e8644d]">
+                  View Schedule
+                </button>
+              </Link>
             </div>
           </div>
         </div>

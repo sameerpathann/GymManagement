@@ -13,7 +13,7 @@ const Schedule = () => {
           className="w-[100%] h-[150vh] object-center object-cover"
           alt=""
         />
-        <div className="w-[50%] h-[20%]  flex flex-col items-center gap-4 absolute top-0 py-8 mt-5">
+        <div className="w-[50%] h-[20%]  flex flex-col items-center gap-4 absolute top-0 py-8 mt-10">
           <h1 className="text-[2.2vw] font-bold uppercase text-[#ed563d]">
             <span className="text-white">Classes</span> Schedule
           </h1>

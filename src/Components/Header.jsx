@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -9,27 +10,64 @@ const Header = () => {
           <h1 className="text-[#ed563b]">studio</h1>
         </div>
         <div className="w-[55%] h-[100%] flex items-center justify-evenly">
-          <h4 className="text-[#ed563b] font-semibold uppercase text-[1vw] cursor-pointer">
-            Home
-          </h4>
-          <h4 className="hover:text-[#ed563b] duration-[0.1s] transition-colors ease-in font-semibold uppercase text-[1vw] cursor-pointer">
-            About
-          </h4>
-          <h4 className="hover:text-[#ed563b] duration-[0.1s] transition-colors ease-in font-semibold uppercase text-[1vw] cursor-pointer">
-            Classes
-          </h4>
-          <h4 className="hover:text-[#ed563b] duration-[0.1s] transition-colors ease-in font-semibold uppercase text-[1vw] cursor-pointer">
-            Shadules
-          </h4>
-          <h4 className="hover:text-[#ed563b] duration-[0.1s] transition-colors ease-in font-semibold uppercase text-[1vw] cursor-pointer">
-            Contact
-          </h4>
-          <button
-            className="border-none outline-none bg-[#ed563b] px-2 py-1 sm:px-4 sm:py-3 text-white
-          text-[1vw] font-semibold uppercase"
+          <NavLink
+            to={"/"}
+            className={({ isActive }) =>
+              isActive ? "text-[#ed563b]" : "text-black"
+            }
           >
-            Sign Up
-          </button>
+            <h4 className="font-semibold uppercase text-[1vw] cursor-pointer">
+              Home
+            </h4>
+          </NavLink>
+          <NavLink
+            to={"/About"}
+            className={({ isActive }) =>
+              isActive ? "text-[#ed563b]" : "text-black"
+            }
+          >
+            <h4 className="font-semibold uppercase text-[1vw] cursor-pointer">
+              About
+            </h4>
+          </NavLink>
+          <NavLink
+            to={"/Classes"}
+            className={({ isActive }) =>
+              isActive ? "text-[#ed563b]" : "text-black"
+            }
+          >
+            <h4 className="font-semibold uppercase text-[1vw] cursor-pointer">
+              Classes
+            </h4>
+          </NavLink>
+          <NavLink
+            to={"/Schedule"}
+            className={({ isActive }) =>
+              isActive ? "text-[#ed563b]" : "text-black"
+            }
+          >
+            <h4 className="font-semibold uppercase text-[1vw] cursor-pointer">
+              Shadules
+            </h4>
+          </NavLink>
+          <NavLink
+            to={"/Contact"}
+            className={({ isActive }) =>
+              isActive ? "text-[#ed563b]" : "text-black"
+            }
+          >
+            <h4 className="font-semibold uppercase text-[1vw] cursor-pointer">
+              Contact
+            </h4>
+          </NavLink>
+          <Link to={"/Signup"}>
+            <button
+              className="border-none outline-none bg-[#ed563b] px-2 py-1 sm:px-4 sm:py-3 text-white
+          text-[1vw] font-semibold uppercase"
+            >
+              Sign Up
+            </button>
+          </Link>
         </div>
       </div>
     </>
