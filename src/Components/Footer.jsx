@@ -3,7 +3,7 @@ import img from "../assets/contact-bg.jpg";
 const Footer = () => {
   return (
     <>
-      <div className="w-[100%] h-[100vh] mt-10">
+      <div className="w-[100%] h-[100vh] mt-16">
         <div className="w-[100%] h-[85%]  flex items-center justify-center">
           <div className="w-[50%] h-[100%] bg-blue-300">
             <iframe
