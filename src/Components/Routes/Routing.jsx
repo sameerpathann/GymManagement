@@ -6,6 +6,7 @@ import OurClasses from "../OurClasses";
 import Schedule from "../Schedule";
 import Footer from "../Footer";
 import Home from "../Home";
+import Form from "../Form";
 
 const Routing = () => {
   return (
@@ -17,6 +18,7 @@ const Routing = () => {
         <Route path="/Classes" element={<OurClasses />} />
         <Route path="/Schedule" element={<Schedule />} />
         <Route path="/Contact" element={<Footer />} />
+        <Route path="/Signup" element={<Form />} />
       </Routes>
     </>
   );

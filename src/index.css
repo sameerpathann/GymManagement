@@ -11,3 +11,19 @@ tr,
 td {
   border: 1px solid white;
 }
+
+.box-shadow-2 {
+  box-shadow: 0.2px 0.2px 0.2px 1px #ed563d;
+}
+.img-2 {
+  background-image: url("https://images.unsplash.com/photo-1605296867724-fa87a8ef53fd?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-position: -100px 1px;
+  background-size: cover;
+}
+/* Custom Toast Styling */
+@media (max-width: 768px) {
+  .Toastify__toast-container {
+    width: 90% !important;
+    left: 5% !important;
+  }
+}
