@@ -8,6 +8,8 @@ import Footer from "../Footer";
 import Home from "../Home";
 import Form from "../Form";
 import Login from "../Login";
+import ProtectedRoute from "../Auth/Auth";
+import Dashboard from "../Dashboard";
 
 const Routing = () => {
   return (
@@ -21,6 +23,14 @@ const Routing = () => {
         <Route path="/Contact" element={<Footer />} />
         <Route path="/Signup" element={<Form />} />
         <Route path="/Login" element={<Login />} />
+        <Route
+          path="/Dashboard"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
     </>
   );

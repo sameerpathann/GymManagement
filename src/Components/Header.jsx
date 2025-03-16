@@ -11,11 +11,13 @@ const Header = () => {
           <h1 className="text-white">Traning</h1>
           <h1 className="text-[#ed563b]">studio</h1>
         </div>
-        <div className="w-[55%] h-[100%] flex items-center justify-evenly">
+        <div className="w-[40%] h-[100%] flex items-center justify-between">
           <NavLink to={"/"}>
             <h4
               className={`font-semibold uppercase text-[1vw] cursor-pointer  hover:text-[#ed563d] transition-colors duration-[0.1s]  ${
-                pathname == `/Signup` ? `text-[#fff]` : `text-black`
+                pathname == `/Signup` || pathname == `/Login`
+                  ? `text-[#fff]`
+                  : `text-black`
               }`}
             >
               Home
@@ -24,7 +26,9 @@ const Header = () => {
           <NavLink to={"/About"}>
             <h4
               className={`font-semibold uppercase text-[1vw] cursor-pointer  hover:text-[#ed563d] transition-colors duration-[0.1s] ${
-                pathname == `/Signup` ? `text-[#fff]` : `text-black`
+                pathname == `/Signup` || pathname == "/Login"
+                  ? `text-[#fff]`
+                  : `text-black`
               }`}
             >
               About
@@ -33,7 +37,9 @@ const Header = () => {
           <NavLink to={"/Classes"}>
             <h4
               className={`font-semibold uppercase text-[1vw] cursor-pointer  hover:text-[#ed563d] transition-colors duration-[0.1s] ${
-                pathname == `/Signup` ? `text-[#fff]` : `text-black`
+                pathname == `/Signup` || pathname == `/Login`
+                  ? `text-[#fff]`
+                  : `text-black`
               }`}
             >
               Classes
@@ -42,7 +48,9 @@ const Header = () => {
           <NavLink to={"/Schedule"}>
             <h4
               className={`font-semibold uppercase text-[1vw] cursor-pointer  hover:text-[#ed563d] transition-colors duration-[0.1s] ${
-                pathname == `/Signup` ? `text-[#fff]` : `text-black`
+                pathname == `/Signup` || pathname == `/Login`
+                  ? `text-[#fff]`
+                  : `text-black`
               }`}
             >
               Shadules
@@ -51,28 +59,46 @@ const Header = () => {
           <NavLink to={"/Contact"}>
             <h4
               className={`font-semibold uppercase text-[1vw] cursor-pointer  hover:text-[#ed563d] transition-colors duration-[0.1s] ${
-                pathname == `/Signup` ? `text-[#fff]` : `text-black`
+                pathname == `/Signup` || pathname == "/Login"
+                  ? `text-[#fff]`
+                  : `text-black`
               }`}
             >
               Contact
             </h4>
           </NavLink>
-          <Link to={"/Signup"}>
-            <button
-              className="border-none outline-none bg-[#ed563b] px-2 py-1 sm:px-4 sm:py-3 text-white
-          text-[1vw] font-semibold uppercase"
-            >
-              Sign Up
-            </button>
-          </Link>
-          <Link to={"/Login"}>
-            <button
-              className="border-none outline-none bg-[#ed563b] px-2 py-1 sm:px-4 sm:py-3 text-white
-          text-[1vw] font-semibold uppercase"
-            >
-              Login
-            </button>
-          </Link>
+        </div>
+        <div className="w-[20%] h-[100%] flex items-center justify-evenly">
+          {JSON.parse(localStorage.getItem("isLogin")) ? (
+            <Link to={"/"}>
+              <button
+                onClick={() => localStorage.clear()}
+                className="border-none outline-none bg-[#ed563b] px-2 py-1 sm:px-4 sm:py-3 text-white
+          text-[1vw] font-semibold uppercase rounded-2xl"
+              >
+                Logout
+              </button>
+            </Link>
+          ) : (
+            <div className="w-[100%] h-[100%] flex items-center justify-evenly">
+              <Link to={"/Signup"}>
+                <button
+                  className="border-none outline-none bg-[#ed563b] px-2 py-1 sm:px-4 sm:py-3 text-white
+          text-[1vw] font-semibold uppercase rounded-2xl"
+                >
+                  Sign Up
+                </button>
+              </Link>
+              <Link to={"/Login"}>
+                <button
+                  className="border-none outline-none bg-[#ed563b] px-2 py-1 sm:px-4 sm:py-3 text-white
+          text-[1vw] font-semibold uppercase rounded-2xl"
+                >
+                  Login
+                </button>
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </>

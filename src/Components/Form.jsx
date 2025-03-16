@@ -19,7 +19,7 @@ const Form = () => {
     if (userDetails.name.length > 0) {
       if (passwordRegex.test(userDetails.password)) {
         if (userDetails.password === userDetails.confirmPassword) {
-          localStorage.setItem("Name", userDetails.name);
+          localStorage.setItem("User", JSON.stringify(userDetails));
           toast.success("✅ SignUp Successful!", {
             position: "top-right",
             autoClose: 5000,
@@ -33,9 +33,8 @@ const Form = () => {
             theme: "dark",
             transition: Flip,
           });
-
           setUserDetails({ name: "", password: "", confirmPassword: "" });
-          Navigate("/Dashboard");
+          Navigate("/Login");
         } else {
           setError("Password Not Match");
         }

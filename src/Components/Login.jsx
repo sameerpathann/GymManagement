@@ -12,14 +12,13 @@ const Login = () => {
   const Navigate = useNavigate();
   const handelSubmit = (e) => {
     e.preventDefault();
-    const passwordRegex =
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
     if (userDetails.name.length > 0) {
-      if (passwordRegex.test(userDetails.password)) {
-        setError("");
-        localStorage.setItem("Name", userDetails.name);
-        toast.success("✅ Login Successful!", {
+      const { name, password } =
+        JSON.parse(localStorage.getItem("User")) ||
+        setError("Please Signup First");
+      if (userDetails.name === name && userDetails.password === password) {
+        toast.success("✅Login Successful!", {
           position: "top-right",
           autoClose: 5000,
           hideProgressBar: false,
@@ -32,13 +31,12 @@ const Login = () => {
           theme: "dark",
           transition: Flip,
         });
-
-        setUserDetails({ name: "", password: "", confirmPassword: "" });
-        Navigate("/Dashboard");
+        setUserDetails({ name: "", password: "" });
+        localStorage.setItem("isLogin", JSON.stringify(true));
+        Navigate("/dashboard");
       } else {
-        setError(
-          "Password must contain at least 8 characters, including uppercase letters, lowercase letters, numbers, and special characters."
-        );
+        setError("Invalid Credentials");
+        return;
       }
     } else {
       setError("Plase Enter Your Name");
@@ -78,9 +76,9 @@ const Login = () => {
                 Submit
               </button>
             </div>
-            <Link to={"/Login"}>
+            <Link to={"/Signup"}>
               <h4 className="text-white text-center text-[1.3vw] font-semibold]">
-                Already Have an Account ?
+                Dont Have A Account ?
               </h4>
             </Link>
             <h4 className="text-[1.3vw] font-semibold text-red-600 text-center">
