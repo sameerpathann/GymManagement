@@ -3,11 +3,10 @@ import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast, Flip } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const Form = () => {
+const Login = () => {
   const [userDetails, setUserDetails] = useState({
     name: "",
     password: "",
-    confirmPassword: "",
   });
   const [error, setError] = useState("");
   const Navigate = useNavigate();
@@ -18,27 +17,24 @@ const Form = () => {
 
     if (userDetails.name.length > 0) {
       if (passwordRegex.test(userDetails.password)) {
-        if (userDetails.password === userDetails.confirmPassword) {
-          localStorage.setItem("Name", userDetails.name);
-          toast.success("✅ SignUp Successful!", {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            newestOnTop: false,
-            closeOnClick: false,
-            rtl: false,
-            pauseOnFocusLoss: true,
-            draggable: true,
-            pauseOnHover: true,
-            theme: "dark",
-            transition: Flip,
-          });
+        setError("");
+        localStorage.setItem("Name", userDetails.name);
+        toast.success("✅ Login Successful!", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          newestOnTop: false,
+          closeOnClick: false,
+          rtl: false,
+          pauseOnFocusLoss: true,
+          draggable: true,
+          pauseOnHover: true,
+          theme: "dark",
+          transition: Flip,
+        });
 
-          setUserDetails({ name: "", password: "", confirmPassword: "" });
-          Navigate("/Dashboard");
-        } else {
-          setError("Password Not Match");
-        }
+        setUserDetails({ name: "", password: "", confirmPassword: "" });
+        Navigate("/Dashboard");
       } else {
         setError(
           "Password must contain at least 8 characters, including uppercase letters, lowercase letters, numbers, and special characters."
@@ -76,16 +72,9 @@ const Form = () => {
               type="text"
               placeholder="Enter Password"
             />
-            <input
-              onChange={(e) => handelChange(e)}
-              name="confirmPassword"
-              value={userDetails.confirmPassword}
-              className="px-2 cursor-pointer py-2 text-[#fff] font-semibold text-[1.2vw] placeholder:text-[#fff] bg-transparent placeholder border-none padding outline-none ring-1 ring-[#fff] rounded-lg w-[100%]"
-              type="text"
-              placeholder="Enter Confirm Password"
-            />
+
             <div className="w-[100%] h-[16%] flex items-center justify-center">
-              <button className="w-[70%] text-[1.5vw] px-2 py-2 rounded bg-[#ed563d] text-white font-semibold ">
+              <button className="w-[70%] text-[1.5vw] px-2 py-2 rounded bg-[#ed563d] text-white font-semibold mt-5 ">
                 Submit
               </button>
             </div>
@@ -105,4 +94,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default Login;

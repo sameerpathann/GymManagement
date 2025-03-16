@@ -7,6 +7,7 @@ import Schedule from "../Schedule";
 import Footer from "../Footer";
 import Home from "../Home";
 import Form from "../Form";
+import Login from "../Login";
 
 const Routing = () => {
   return (
@@ -19,6 +20,7 @@ const Routing = () => {
         <Route path="/Schedule" element={<Schedule />} />
         <Route path="/Contact" element={<Footer />} />
         <Route path="/Signup" element={<Form />} />
+        <Route path="/Login" element={<Login />} />
       </Routes>
     </>
   );
