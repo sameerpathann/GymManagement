@@ -20,7 +20,7 @@ const Form = () => {
       if (passwordRegex.test(userDetails.password)) {
         if (userDetails.password === userDetails.confirmPassword) {
           localStorage.setItem("User", JSON.stringify(userDetails));
-          toast.success("✅ SignUp Successful!", {
+          toast.success("✅SignUp Successful!", {
             position: "top-right",
             autoClose: 5000,
             hideProgressBar: false,
@@ -34,7 +34,9 @@ const Form = () => {
             transition: Flip,
           });
           setUserDetails({ name: "", password: "", confirmPassword: "" });
-          Navigate("/Login");
+          setTimeout(() => {
+            Navigate("/Login");
+          }, 2000);
         } else {
           setError("Password Not Match");
         }

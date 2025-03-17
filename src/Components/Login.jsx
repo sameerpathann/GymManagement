@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast, Flip } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -33,7 +33,9 @@ const Login = () => {
         });
         setUserDetails({ name: "", password: "" });
         localStorage.setItem("isLogin", JSON.stringify(true));
-        Navigate("/dashboard");
+        setTimeout(() => {
+          Navigate("/dashboard");
+        }, 2000);
       } else {
         setError("Invalid Credentials");
         return;
