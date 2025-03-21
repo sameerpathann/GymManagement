@@ -35,7 +35,7 @@ const Login = () => {
         localStorage.setItem("isLogin", JSON.stringify(true));
         setTimeout(() => {
           Navigate("/dashboard");
-        }, 2000);
+        }, 1000);
       } else {
         setError("Invalid Credentials");
         return;

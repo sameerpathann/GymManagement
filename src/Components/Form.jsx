@@ -36,7 +36,7 @@ const Form = () => {
           setUserDetails({ name: "", password: "", confirmPassword: "" });
           setTimeout(() => {
             Navigate("/Login");
-          }, 2000);
+          }, 1000);
         } else {
           setError("Password Not Match");
         }

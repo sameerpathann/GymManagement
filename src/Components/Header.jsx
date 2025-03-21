@@ -6,9 +6,24 @@ const Header = () => {
 
   return (
     <>
-      <div className="w-[100%]  h-[10vh] bg-[#ffffff32] px-16 flex items-center justify-between absolute top-0 z-20">
+      <div
+        className={`w-[100%]  h-[10vh] bg-[#ffffff32] px-16 flex items-center justify-between absolute top-0 z-20 ${
+          pathname == "/dashboard" ? `bg-[#53525230]` : ""
+        }`}
+      >
         <div className="w-[30%] flex items-center text-[2.5vw] uppercase font-bold gap-[1.5px] h-[100%]">
-          <h1 className="text-white">Traning</h1>
+          <h1
+            className={`${
+              pathname == "/About" ||
+              pathname == "/dashboard" ||
+              pathname == "/Classes" ||
+              pathname == "/Contact"
+                ? "text-black"
+                : "text-white"
+            }`}
+          >
+            Traning
+          </h1>
           <h1 className="text-[#ed563b]">studio</h1>
         </div>
         <div className="w-[40%] h-[100%] flex items-center justify-between">
@@ -67,6 +82,21 @@ const Header = () => {
               Contact
             </h4>
           </NavLink>
+          {JSON.parse(localStorage.getItem("isLogin")) ? (
+            <NavLink to={"/dashboard"}>
+              <h4
+                className={`font-semibold uppercase text-[1vw] cursor-pointer  hover:text-[#ed563d] transition-colors duration-[0.1s] ${
+                  pathname == `/Signup` || pathname == "/Login"
+                    ? `text-[#fff]`
+                    : `text-black`
+                }`}
+              >
+                DashBoard
+              </h4>
+            </NavLink>
+          ) : (
+            ""
+          )}
         </div>
         <div className="w-[20%] h-[100%] flex items-center justify-evenly">
           {JSON.parse(localStorage.getItem("isLogin")) ? (
