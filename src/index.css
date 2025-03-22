@@ -27,3 +27,9 @@ td {
     left: 5% !important;
   }
 }
+.br {
+  border-right: 0.5px;
+  border-right-style: solid;
+  border-right-color: rgb(214, 210, 210);
+  box-shadow: 1px 1px 10px rgb(190, 189, 189);
+}

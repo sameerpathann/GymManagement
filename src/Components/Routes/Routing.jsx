@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Scection from "../Scection";
 import Header from "../Header";
 import OurClasses from "../OurClasses";
@@ -12,9 +12,11 @@ import ProtectedRoute from "../Auth/Auth";
 import Dashboard from "../Dashboard";
 
 const Routing = () => {
+  const { pathname } = useLocation();
+
   return (
     <>
-      <Header />
+      {pathname !== "/dashboard" ? <Header /> : ""}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/About" element={<Scection />} />
