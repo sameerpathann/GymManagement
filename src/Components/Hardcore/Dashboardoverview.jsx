@@ -7,13 +7,11 @@ const totalitems = [
     heading: "total Users",
     value: 320,
     icon: (prop) => <FiUsers {...prop} size={"100%"} color="rgb(59,130,246)" />,
-    route: "/users",
   },
   {
     heading: "Total Revenue",
     value: "$12,500",
     icon: (prop) => <BiDollar {...prop} size={"100%"} color="rgb(34,197,94)" />,
-    route: "/revenue",
   },
   {
     heading: "Total Memberships",
@@ -21,7 +19,6 @@ const totalitems = [
     icon: (prop) => (
       <BsBoxSeam {...prop} size={"70%"} color="rgb(249,115,22)" />
     ),
-    route: "/memberships",
   },
   {
     heading: "Total Trainers",
@@ -34,7 +31,6 @@ const totalitems = [
         size={"100%"}
       />
     ),
-    route: "/trainers",
   },
 ];
 export default totalitems;

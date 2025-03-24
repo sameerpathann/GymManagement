@@ -3,9 +3,11 @@ import SideBarItems from "./SideBarItems";
 import sideBarList from "./Hardcore/Dashboardsidebar";
 import totalitems from "./Hardcore/Dashboardoverview";
 import DashboardCard from "./DashboardCard";
+import DashboardMain from "./DashboardMain";
 
 const Dashboard = () => {
   const [dashBoardCardDetails, setDashboardCardDetails] = useState(totalitems);
+
   const { name } = JSON.parse(localStorage.getItem("User"));
   const [isClick, setIsClick] = useState(1);
   const handelClick = (e) => {
@@ -54,10 +56,12 @@ const Dashboard = () => {
                 value={details.value}
                 icon={details.icon}
                 id={i}
-                route={details.route}
               />
             );
           })}
+        </div>
+        <div className="w-[100%] h-[60%] bg-red-300">
+          <DashboardMain isClick={isClick} />
         </div>
       </div>
     </div>

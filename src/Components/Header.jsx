@@ -30,7 +30,9 @@ const Header = () => {
           <NavLink to={"/"}>
             <h4
               className={`font-semibold uppercase text-[1vw] cursor-pointer  hover:text-[#ed563d] transition-colors duration-[0.1s]  ${
-                pathname == `/Signup` || pathname == `/Login`
+                pathname == `/Signup` ||
+                pathname == `/Login` ||
+                pathname == `/Schedule`
                   ? `text-[#fff]`
                   : `text-black`
               }`}
@@ -41,7 +43,9 @@ const Header = () => {
           <NavLink to={"/About"}>
             <h4
               className={`font-semibold uppercase text-[1vw] cursor-pointer  hover:text-[#ed563d] transition-colors duration-[0.1s] ${
-                pathname == `/Signup` || pathname == "/Login"
+                pathname == `/Signup` ||
+                pathname == "/Login" ||
+                pathname == `/Schedule`
                   ? `text-[#fff]`
                   : `text-black`
               }`}
@@ -52,7 +56,9 @@ const Header = () => {
           <NavLink to={"/Classes"}>
             <h4
               className={`font-semibold uppercase text-[1vw] cursor-pointer  hover:text-[#ed563d] transition-colors duration-[0.1s] ${
-                pathname == `/Signup` || pathname == `/Login`
+                pathname == `/Signup` ||
+                pathname == `/Login` ||
+                pathname == `/Schedule`
                   ? `text-[#fff]`
                   : `text-black`
               }`}
@@ -63,7 +69,9 @@ const Header = () => {
           <NavLink to={"/Schedule"}>
             <h4
               className={`font-semibold uppercase text-[1vw] cursor-pointer  hover:text-[#ed563d] transition-colors duration-[0.1s] ${
-                pathname == `/Signup` || pathname == `/Login`
+                pathname == `/Signup` ||
+                pathname == `/Login` ||
+                pathname == `/Schedule`
                   ? `text-[#fff]`
                   : `text-black`
               }`}
@@ -74,7 +82,9 @@ const Header = () => {
           <NavLink to={"/Contact"}>
             <h4
               className={`font-semibold uppercase text-[1vw] cursor-pointer  hover:text-[#ed563d] transition-colors duration-[0.1s] ${
-                pathname == `/Signup` || pathname == "/Login"
+                pathname == `/Signup` ||
+                pathname == "/Login" ||
+                pathname == `/Schedule`
                   ? `text-[#fff]`
                   : `text-black`
               }`}
