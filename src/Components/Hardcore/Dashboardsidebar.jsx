@@ -7,27 +7,27 @@ import { CiSettings } from "react-icons/ci";
 const sideBarList = [
   {
     id: 1,
-    icon: <TbActivityHeartbeat />,
+    icon: (id) => <TbActivityHeartbeat className={`w-[100%] h-[100%] ${id}`} />,
     heading: "Dashboard",
   },
   {
     id: 2,
-    icon: <FiUsers />,
+    icon: (id) => <FiUsers className={`w-[100%] h-[100%] ${id}`} />,
     heading: "Users",
   },
   {
     id: 3,
-    icon: <BsBoxSeam />,
+    icon: (id) => <BsBoxSeam className={`w-[80%] h-[80%] ${id}`} />,
     heading: "Memberships",
   },
   {
     id: 4,
-    icon: <BiDollar />,
+    icon: (id) => <BiDollar className={`w-[100%] h-[100%] ${id}`} />,
     heading: "Payments",
   },
   {
     id: 5,
-    icon: <CiSettings />,
+    icon: (id) => <CiSettings className={`w-[100%] h-[100%] ${id}`} />,
     heading: "Settings",
   },
 ];

@@ -1,6 +1,6 @@
 import React from "react";
 
-const DashboardCard = ({ title, value, icon, id }) => {
+const DashboardCard = ({ data, id }) => {
   return (
     <>
       <div
@@ -9,12 +9,12 @@ const DashboardCard = ({ title, value, icon, id }) => {
       >
         <div className="w-[80%] h-[100%] flex flex-col justify-center pl-10">
           <h1 className="text-[1.4vw] font-medium w-[80%] capitalize">
-            {title}
+            {data.heading}
           </h1>
-          <h1 className="text-[1.6vw] font-bold">{value}</h1>
+          <h1 className="text-[1.6vw] font-bold">{data.value}</h1>
         </div>
         <div className="w-[18%] h-[100%] flex items-center justify-center pr-2">
-          {icon()}
+          {data.icon()}
         </div>
       </div>
     </>

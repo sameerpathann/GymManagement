@@ -2,10 +2,11 @@ import { FiUsers } from "react-icons/fi";
 import { BiDollar } from "react-icons/bi";
 import { BsBoxSeam } from "react-icons/bs";
 import { IoBarbellSharp } from "react-icons/io5";
+import trainersData from "./TrainersData";
 const totalitems = [
   {
     heading: "total Users",
-    value: 320,
+    value: trainersData.totalTrainers,
     icon: (prop) => <FiUsers {...prop} size={"100%"} color="rgb(59,130,246)" />,
   },
   {
