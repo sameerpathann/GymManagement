@@ -5,7 +5,12 @@ import MembershipSection from "./Sections/MembershipSection";
 import PaymentSection from "./Sections/PaymentSection";
 import SettingsSection from "./Sections/SettingsSection";
 
-const DashboardMain = ({ isClick, trainerDetails, setTrainersDetails }) => {
+const DashboardMain = ({
+  isClick,
+  trainerDetails,
+
+  handelTrainerDelete,
+}) => {
   const sections = {
     1: DashBoardSection,
     2: UserSection,
@@ -21,7 +26,7 @@ const DashboardMain = ({ isClick, trainerDetails, setTrainersDetails }) => {
       {
         <ContentComponent
           trainerDetails={trainerDetails}
-          setTrainersDetails={setTrainersDetails}
+          handelTrainerDelete={handelTrainerDelete}
         />
       }
     </>

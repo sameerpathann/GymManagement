@@ -1,27 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 import SideBarItems from "./SideBarItems";
 import sideBarList from "./Hardcore/Dashboardsidebar";
-import totalitems from "./Hardcore/Dashboardoverview";
 import DashboardCard from "./DashboardCard";
 import DashboardMain from "./DashboardMain";
-import trainersData from "./Hardcore/TrainersData";
-import DashBoardButton from "./DashBoardButton";
-const Dashboard = () => {
-  const [dashBoardCardDetails, setDashboardCardDetails] = useState(totalitems);
-  const [trainerDetails, setTrainersDetails] = useState(trainersData);
-  const { name } = JSON.parse(localStorage.getItem("User"));
-  const [isClick, setIsClick] = useState(1);
-  const handelClick = (e) => {
-    if (!e.target.classList.contains("parent")) {
-      const id = [...e.target.classList].slice(-1)[0];
-      if (id) {
-        setIsClick(id);
-      } else {
-        setIsClick(1);
-      }
-    }
-  };
 
+import DashBoardButton from "./DashBoardButton";
+
+const Dashboard = ({
+  dashBoardCardDetails,
+  setDashboardCardDetails,
+  trainerDetails,
+  name,
+  isClick,
+  setIsClick,
+  handelClick,
+  handelAddtrainer,
+  handelTrainerDelete,
+}) => {
   return (
     <>
       <div className="w-full min-h-screen flex">
@@ -66,7 +61,7 @@ const Dashboard = () => {
             <DashboardMain
               isClick={isClick}
               trainerDetails={trainerDetails}
-              setTrainersDetails={setTrainersDetails}
+              handelTrainerDelete={handelTrainerDelete}
             />
           </div>
         </div>
@@ -76,31 +71,3 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
-
-/* 
-  1st div
-  <div className="w-[100%] h-[10%] flex items-center  px-10">
-          <h1 className="text-[1.7vw] font-semibold">Admin Dashboard</h1>
-  </div>
-
-  2nd Div
-    <div className="w-[100%] h-[30%] px-3 py-6  flex items-center justify-center gap-4">
-    
-          {dashBoardCardDetails?.map((details, i) => {
-            return <DashboardCard key={i} data={{ ...details }} id={i} />;
-          })}
-
-    </div>
-
-    3rd div
-  <div className="w-full min-h-[60%] columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4 p-4 auto-rows-auto">
-
-          <DashboardMain
-            isClick={isClick}
-            trainerDetails={trainerDetails}
-            setTrainersDetails={setTrainersDetails}
-          />
-
-  </div>
-
-  */

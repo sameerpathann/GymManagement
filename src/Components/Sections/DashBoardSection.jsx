@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 import TrainerCard from "../TrainerCard";
-const DashBoardSection = ({ trainerDetails, setTrainersDetails }) => {
+const DashBoardSection = ({ trainerDetails, handelTrainerDelete }) => {
   return (
     <>
-      {trainerDetails?.trainers?.map((trainer) => (
-        <TrainerCard key={trainer.id} obj={{ ...trainer }} total={10} />
+      {trainerDetails.trainers.map((trainer) => (
+        <TrainerCard
+          key={trainer.id}
+          obj={{ ...trainer }}
+          total={10}
+          handelTrainerDelete={handelTrainerDelete}
+        />
       ))}
     </>
   );

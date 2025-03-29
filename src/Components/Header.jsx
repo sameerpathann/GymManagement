@@ -8,7 +8,11 @@ const Header = () => {
     <>
       <div
         className={`w-[100%]  h-[10vh] bg-[#ffffff32] px-16 flex items-center justify-between absolute top-0 z-20 ${
-          pathname == "/dashboard" ? `bg-[#53525230]` : ""
+          pathname == "/dashboard"
+            ? `bg-[#53525230]`
+            : pathname == "/addTrainer"
+            ? `br`
+            : ``
         }`}
       >
         <div className="w-[30%] flex items-center text-[2.5vw] uppercase font-bold gap-[1.5px] h-[100%]">
@@ -17,7 +21,8 @@ const Header = () => {
               pathname == "/About" ||
               pathname == "/dashboard" ||
               pathname == "/Classes" ||
-              pathname == "/Contact"
+              pathname == "/Contact" ||
+              pathname == "/addTrainer"
                 ? "text-black"
                 : "text-white"
             }`}
@@ -96,7 +101,9 @@ const Header = () => {
             <NavLink to={"/dashboard"}>
               <h4
                 className={`font-semibold uppercase text-[1vw] cursor-pointer  hover:text-[#ed563d] transition-colors duration-[0.1s] ${
-                  pathname == `/Signup` || pathname == "/Login"
+                  pathname == `/Signup` ||
+                  pathname == "/Login" ||
+                  pathname == `/Schedule`
                     ? `text-[#fff]`
                     : `text-black`
                 }`}

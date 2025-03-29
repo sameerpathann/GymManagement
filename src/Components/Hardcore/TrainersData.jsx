@@ -1,12 +1,9 @@
-import firstTrainerImg from "../../assets/first-trainer.jpg";
-import secondTrainerImg from "../../assets/second-trainer.jpg";
-import thirdTrainerImg from "../../assets/third-trainer.jpg";
 const trainersData = {
   totalTrainers: 10,
   trainers: [
     {
       id: 1,
-      img: firstTrainerImg,
+      img: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSD5r7so4V2D-VwUD3-gKDEv0HLRG1TdOna3m0QHejzuwv_ziaS",
       title: "Strength Trainer",
       name: "Bret D. Bowers",
       description:
@@ -15,7 +12,7 @@ const trainersData = {
     },
     {
       id: 2,
-      img: secondTrainerImg,
+      img: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQeSYP_I8U21ucVCwAv1l3_cDVpq9vCJy7B2S9RJemlamhkg1Vh",
       title: "Muscle Trainer",
       name: "Hector T. Daigl",
       description:
@@ -24,7 +21,7 @@ const trainersData = {
     },
     {
       id: 3,
-      img: thirdTrainerImg,
+      img: "https://www.myprotein.co.in/images?url=https://blogscdn.thehut.net/wp-content/uploads/sites/478/2018/05/11115302/triceps-dip-min.jpg&format=webp&auto=avif&width=700&height=467&fit=crop",
       title: "Power Trainer",
       name: "Paul D. Newman",
       description:

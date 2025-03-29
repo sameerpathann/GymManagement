@@ -10,13 +10,26 @@ import Form from "../Form";
 import Login from "../Login";
 import ProtectedRoute from "../Auth/Auth";
 import Dashboard from "../Dashboard";
+import NewTrrainerForm from "../Sections/NewTrrainerForm";
 
-const Routing = () => {
+const Routing = ({
+  dashBoardCardDetails,
+  setDashboardCardDetails,
+  trainerDetails,
+  name,
+  isClick,
+  setIsClick,
+  handelClick,
+  handelAddtrainer,
+  newTrainer,
+  setNewTrainer,
+  handelTrainerDelete,
+}) => {
   const { pathname } = useLocation();
 
   return (
     <>
-      {pathname !== "/dashboard" ? <Header /> : ""}
+      {pathname !== "/dashboard" && pathname !== "/Dashboard" ? <Header /> : ""}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/About" element={<Scection />} />
@@ -25,11 +38,48 @@ const Routing = () => {
         <Route path="/Contact" element={<Footer />} />
         <Route path="/Signup" element={<Form />} />
         <Route path="/Login" element={<Login />} />
+
         <Route
           path="/Dashboard"
           element={
             <ProtectedRoute>
-              <Dashboard />
+              <Dashboard
+                dashBoardCardDetails={dashBoardCardDetails}
+                setDashboardCardDetails={setDashboardCardDetails}
+                trainerDetails={trainerDetails}
+                name={name}
+                isClick={isClick}
+                setIsClick={setIsClick}
+                handelClick={handelClick}
+                handelAddtrainer={handelAddtrainer}
+                handelTrainerDelete={handelTrainerDelete}
+              />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/addTrainer"
+          element={
+            <ProtectedRoute>
+              <NewTrrainerForm
+                handelAddtrainer={handelAddtrainer}
+                newTrainer={newTrainer}
+                setNewTrainer={setNewTrainer}
+              />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/EditTrainer/:id"
+          element={
+            <ProtectedRoute>
+              <NewTrrainerForm
+                handelAddtrainer={handelAddtrainer}
+                newTrainer={newTrainer}
+                setNewTrainer={setNewTrainer}
+                trainerDetails={trainerDetails}
+                isEditMode={true}
+              />
             </ProtectedRoute>
           }
         />
