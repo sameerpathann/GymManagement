@@ -8,8 +8,8 @@ import SettingsSection from "./Sections/SettingsSection";
 const DashboardMain = ({
   isClick,
   trainerDetails,
-
   handelTrainerDelete,
+  userData,
 }) => {
   const sections = {
     1: DashBoardSection,
@@ -27,6 +27,7 @@ const DashboardMain = ({
         <ContentComponent
           trainerDetails={trainerDetails}
           handelTrainerDelete={handelTrainerDelete}
+          userData={userData}
         />
       }
     </>

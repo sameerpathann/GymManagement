@@ -4,6 +4,7 @@ import { Flip, toast, ToastContainer } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import totalitems from "./Components/Hardcore/Dashboardoverview";
 import trainersData from "./Components/Hardcore/TrainersData";
+import usersData from "./Components/Hardcore/UserData";
 const App = () => {
   const [dashBoardCardDetails, setDashboardCardDetails] = useState(totalitems);
   const [trainerDetails, setTrainersDetails] = useState(trainersData);
@@ -15,7 +16,7 @@ const App = () => {
     description: "",
     contact: "",
   });
-
+  const [userData, setUserData] = useState(usersData);
   const { name } = JSON.parse(localStorage.getItem("User"));
   const [isClick, setIsClick] = useState(1);
   const handelClick = (e) => {
@@ -104,6 +105,7 @@ const App = () => {
         newTrainer={newTrainer}
         setNewTrainer={setNewTrainer}
         handelTrainerDelete={handelTrainerDelete}
+        userData={userData}
       />
       <ToastContainer />
     </>

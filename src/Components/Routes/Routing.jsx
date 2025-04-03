@@ -24,6 +24,7 @@ const Routing = ({
   newTrainer,
   setNewTrainer,
   handelTrainerDelete,
+  userData,
 }) => {
   const { pathname } = useLocation();
 
@@ -53,6 +54,7 @@ const Routing = ({
                 handelClick={handelClick}
                 handelAddtrainer={handelAddtrainer}
                 handelTrainerDelete={handelTrainerDelete}
+                userData={userData}
               />
             </ProtectedRoute>
           }

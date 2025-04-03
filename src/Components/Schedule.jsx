@@ -48,64 +48,64 @@ const Schedule = () => {
         </div>
         <div className="w-[100%] h-[60%]  flex items-center justify-center absolute top-[35%]">
           <div className="w-[70%] h-[90%]">
-            <table className="table-auto w-[100%] h-[100%]">
+            <table className="table-auto w-[100%] h-[100%] border-table ">
               <thead>
-                <tr>
-                  <th className="text-[1.2vw] text-white w-[20%] py-14">
+                <tr className="border-table">
+                  <th className="text-[1.2vw] text-white w-[20%] py-14 border-table">
                     Fitness Class
                   </th>
                   <th
-                    className="text-[1.2vw] text-white w-[20%]
+                    className="text-[1.2vw] text-white w-[20%] border-table
                   "
                   >
                     10:00AM - 11:30AM
                   </th>
-                  <th className="w-[20%]"></th>
-                  <th className="text-[1.2vw] text-white w-[20%]">
+                  <th className="w-[20%] border-table"></th>
+                  <th className="text-[1.2vw] text-white w-[20%] border-table">
                     William G. Stewart
                   </th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td className="text-[1.2vw] font-semibold text-white w-[20%] text-center">
+                <tr className="border-table">
+                  <td className="text-[1.2vw] border-table font-semibold text-white w-[20%] text-center">
                     Muscle Traning
                   </td>
-                  <td className="text-[1.2vw] font-semibold text-white w-[20%]"></td>
-                  <td className="text-[1.2vw] font-semibold text-white w-[20%]"></td>
-                  <td className="text-[1.2vw] font-semibold text-white w-[20%] text-center">
+                  <td className="text-[1.2vw] border-table font-semibold text-white w-[20%]"></td>
+                  <td className="text-[1.2vw] border-table font-semibold text-white w-[20%]"></td>
+                  <td className="text-[1.2vw] border-table font-semibold text-white w-[20%] text-center">
                     Paul D. Newman
                   </td>
                 </tr>
                 <tr>
-                  <td className="text-[1.2vw] font-semibold text-white w-[20%] text-center">
+                  <td className="text-[1.2vw] border-table font-semibold text-white w-[20%] text-center">
                     Body Building
                   </td>
-                  <td className="text-[1.2vw] font-semibold text-white w-[20%]"></td>
-                  <td className="text-[1.2vw] font-semibold text-white w-[20%] text-center">
+                  <td className="text-[1.2vw] border-table font-semibold text-white w-[20%]"></td>
+                  <td className="text-[1.2vw] border-table font-semibold text-white w-[20%] text-center">
                     2:00PM - 3:30PM
                   </td>
-                  <td className="text-[1.2vw] font-semibold text-white w-[20%] text-center">
+                  <td className="text-[1.2vw] border-table font-semibold text-white w-[20%] text-center">
                     Boyd C. Harris
                   </td>
                 </tr>
                 <tr>
-                  <td className="text-[1.2vw] font-semibold text-white w-[20%] text-center">
+                  <td className="text-[1.2vw] border-table font-semibold text-white w-[20%] text-center">
                     Yoga Training Class
                   </td>
-                  <td className="text-[1.2vw] font-semibold text-white w-[20%]"></td>
-                  <td className="text-[1.2vw] font-semibold text-white w-[20%] text-center"></td>
-                  <td className="text-[1.2vw] font-semibold text-white w-[20%] text-center">
+                  <td className="text-[1.2vw] border-table font-semibold text-white w-[20%]"></td>
+                  <td className="text-[1.2vw] border-table font-semibold text-white w-[20%] text-center"></td>
+                  <td className="text-[1.2vw] border-table font-semibold text-white w-[20%] text-center">
                     Hector T. Daigle
                   </td>
                 </tr>
                 <tr>
-                  <td className="text-[1.2vw] font-semibold text-white w-[20%] text-center">
+                  <td className="text-[1.2vw] border-table font-semibold text-white w-[20%] text-center">
                     Advance Training
                   </td>
-                  <td className="text-[1.2vw] font-semibold text-white w-[20%]"></td>
-                  <td className="text-[1.2vw] font-semibold text-white w-[20%] text-center"></td>
-                  <td className="text-[1.2vw] font-semibold text-white w-[20%] text-center">
+                  <td className="text-[1.2vw] border-table font-semibold text-white w-[20%]"></td>
+                  <td className="text-[1.2vw] border-table font-semibold text-white w-[20%] text-center"></td>
+                  <td className="text-[1.2vw] border-table font-semibold text-white w-[20%] text-center">
                     Bret D. Bowers
                   </td>
                 </tr>

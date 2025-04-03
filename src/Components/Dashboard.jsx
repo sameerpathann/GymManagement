@@ -16,6 +16,7 @@ const Dashboard = ({
   handelClick,
   handelAddtrainer,
   handelTrainerDelete,
+  userData,
 }) => {
   return (
     <>
@@ -57,11 +58,12 @@ const Dashboard = ({
               return <DashboardCard key={i} data={{ ...details }} id={i} />;
             })}
           </div>
-          <div className="w-full min-h-screen  columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4 p-4 auto-rows-auto">
+          <div className="w-full min-h-screen gap-4">
             <DashboardMain
               isClick={isClick}
               trainerDetails={trainerDetails}
               handelTrainerDelete={handelTrainerDelete}
+              userData={userData}
             />
           </div>
         </div>
