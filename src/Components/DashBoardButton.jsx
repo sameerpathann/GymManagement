@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const DashBoardButton = ({ color, text }) => {
+const DashBoardButton = ({ color, text, path }) => {
   return (
     <>
-      <Link className="w-[15%] h-[100%]" to={"/addTrainer"}>
+      <Link className="w-[15%] h-[100%]" to={path}>
         {" "}
         <div className="w-[100%] h-[100%] flex items-center justify-center">
           <button

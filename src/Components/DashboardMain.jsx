@@ -10,6 +10,7 @@ const DashboardMain = ({
   trainerDetails,
   handelTrainerDelete,
   userData,
+  handelUserDelete,
 }) => {
   const sections = {
     1: DashBoardSection,
@@ -28,6 +29,7 @@ const DashboardMain = ({
           trainerDetails={trainerDetails}
           handelTrainerDelete={handelTrainerDelete}
           userData={userData}
+          handelUserDelete={handelUserDelete}
         />
       }
     </>

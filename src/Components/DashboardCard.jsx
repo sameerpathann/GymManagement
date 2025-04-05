@@ -1,6 +1,6 @@
 import React from "react";
 
-const DashboardCard = ({ data, id }) => {
+const DashboardCard = ({ data, id, userData }) => {
   return (
     <>
       <div

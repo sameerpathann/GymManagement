@@ -22,7 +22,10 @@ const Header = () => {
               pathname == "/dashboard" ||
               pathname == "/Classes" ||
               pathname == "/Contact" ||
-              pathname == "/addTrainer"
+              pathname == "/addTrainer" ||
+              pathname == "/addUser" ||
+              pathname.startsWith("/EditTrainer") ||
+              pathname.startsWith("/EditUser")
                 ? "text-black"
                 : "text-white"
             }`}

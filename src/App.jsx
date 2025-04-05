@@ -4,7 +4,7 @@ import { Flip, toast, ToastContainer } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import totalitems from "./Components/Hardcore/Dashboardoverview";
 import trainersData from "./Components/Hardcore/TrainersData";
-import usersData from "./Components/Hardcore/UserData";
+import users from "./Components/Hardcore/UserData";
 const App = () => {
   const [dashBoardCardDetails, setDashboardCardDetails] = useState(totalitems);
   const [trainerDetails, setTrainersDetails] = useState(trainersData);
@@ -16,7 +16,16 @@ const App = () => {
     description: "",
     contact: "",
   });
-  const [userData, setUserData] = useState(usersData);
+  const [userData, setUserData] = useState(users);
+  const [newUser, setNewUser] = useState({
+    id: Math.floor(Math.random() * 1000),
+    name: "",
+    email: "",
+    membershipType: "",
+    workoutPlan: "",
+    trainer: "",
+    status: "Active",
+  });
   const { name } = JSON.parse(localStorage.getItem("User"));
   const [isClick, setIsClick] = useState(1);
   const handelClick = (e) => {
@@ -90,7 +99,44 @@ const App = () => {
       }));
     }
   };
-
+  const handelUserDelete = (id) => {
+    if (window.confirm("Are you sure you want to delete")) {
+      setUserData((prev) => ({
+        ...prev,
+        Data: prev.Data.filter((user) => user.id !== id),
+      }));
+    }
+  };
+  const handelAddUser = (e) => {
+    e.preventDefault();
+    const isExistingUser = userData.Data.some((user) => user.id === newUser.id);
+    if (isExistingUser) {
+      setUserData((prev) => {
+        const updatedUser = prev.Data.map((user) =>
+          user.id == newUser.id ? newUser : user
+        );
+        setUserData((prev) => ({ ...prev, Data: updatedUser }));
+      });
+      toast.success("User Editted Succesfully!", { transition: Flip });
+      navigate("/dashboard");
+    } else {
+      if (
+        newUser.name.trim() !== "" &&
+        newUser.email.trim() !== "" &&
+        newUser.membershipType.trim() !== "" &&
+        newUser.workoutPlan.trim() !== "" &&
+        newUser.trainer.trim() !== ""
+      ) {
+        setUserData((prev) => {
+          return { ...prev, Data: [...prev.Data, newUser] };
+        });
+        toast.success("User Added Successfully!", { transition: Flip });
+        navigate("/dashboard");
+      } else {
+        toast.error("Please Fill All Detials!", { transition: Flip });
+      }
+    }
+  };
   return (
     <>
       <Routing
@@ -106,6 +152,10 @@ const App = () => {
         setNewTrainer={setNewTrainer}
         handelTrainerDelete={handelTrainerDelete}
         userData={userData}
+        handelUserDelete={handelUserDelete}
+        newUser={newUser}
+        setNewUser={setNewUser}
+        handelAddUser={handelAddUser}
       />
       <ToastContainer />
     </>

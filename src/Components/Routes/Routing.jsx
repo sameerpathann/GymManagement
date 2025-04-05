@@ -11,6 +11,7 @@ import Login from "../Login";
 import ProtectedRoute from "../Auth/Auth";
 import Dashboard from "../Dashboard";
 import NewTrrainerForm from "../Sections/NewTrrainerForm";
+import UserForm from "../UserForm";
 
 const Routing = ({
   dashBoardCardDetails,
@@ -25,6 +26,10 @@ const Routing = ({
   setNewTrainer,
   handelTrainerDelete,
   userData,
+  handelUserDelete,
+  newUser,
+  setNewUser,
+  handelAddUser,
 }) => {
   const { pathname } = useLocation();
 
@@ -55,6 +60,7 @@ const Routing = ({
                 handelAddtrainer={handelAddtrainer}
                 handelTrainerDelete={handelTrainerDelete}
                 userData={userData}
+                handelUserDelete={handelUserDelete}
               />
             </ProtectedRoute>
           }
@@ -81,6 +87,32 @@ const Routing = ({
                 setNewTrainer={setNewTrainer}
                 trainerDetails={trainerDetails}
                 isEditMode={true}
+              />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/AddUser"
+          element={
+            <ProtectedRoute>
+              <UserForm
+                newUser={newUser}
+                setNewUser={setNewUser}
+                handelAddUser={handelAddUser}
+              />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/EditUser/:id"
+          element={
+            <ProtectedRoute>
+              <UserForm
+                newUser={newUser}
+                setNewUser={setNewUser}
+                handelAddUser={handelAddUser}
+                userData={userData}
+                editMode={true}
               />
             </ProtectedRoute>
           }

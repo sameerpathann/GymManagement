@@ -3,10 +3,11 @@ import { BiDollar } from "react-icons/bi";
 import { BsBoxSeam } from "react-icons/bs";
 import { IoBarbellSharp } from "react-icons/io5";
 import trainersData from "./TrainersData";
+import users from "./UserData";
 const totalitems = [
   {
     heading: "total Users",
-    value: trainersData.totalTrainers,
+    value: users.totalUser,
     icon: (prop) => <FiUsers {...prop} size={"100%"} color="rgb(59,130,246)" />,
   },
   {
@@ -23,7 +24,7 @@ const totalitems = [
   },
   {
     heading: "Total Trainers",
-    value: 8,
+    value: trainersData.totalTrainers,
     icon: (prop) => (
       <IoBarbellSharp
         {...prop}
