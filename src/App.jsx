@@ -5,7 +5,9 @@ import { useNavigate } from "react-router-dom";
 import totalitems from "./Components/Hardcore/Dashboardoverview";
 import trainersData from "./Components/Hardcore/TrainersData";
 import users from "./Components/Hardcore/UserData";
+import membershipDetails from "./Components/Hardcore/MembershipData";
 const App = () => {
+  // localStorage.clear("");
   const [dashBoardCardDetails, setDashboardCardDetails] = useState(totalitems);
   const [trainerDetails, setTrainersDetails] = useState(trainersData);
   const [newTrainer, setNewTrainer] = useState({
@@ -26,7 +28,16 @@ const App = () => {
     trainer: "",
     status: "Active",
   });
-  const { name } = JSON.parse(localStorage.getItem("User"));
+  const [membershipData, setMembershipData] = useState(membershipDetails);
+  const [newMembership, setNewMembership] = useState({
+    id: Math.floor(Math.random() * 1000),
+    name: "",
+    price: "",
+    duration: "",
+    benefits: "",
+  });
+  const userObj = JSON.parse(localStorage.getItem("User")) || {};
+  const name = userObj?.name || "";
   const [isClick, setIsClick] = useState(1);
   const handelClick = (e) => {
     if (!e.target.classList.contains("parent")) {
@@ -43,9 +54,10 @@ const App = () => {
   const login = localStorage.getItem("isLogin") === "true";
 
   useEffect(() => {
-    const lastpath = localStorage.getItem("lastPath") || "/dashboard";
-
-    navigate(login ? `${lastpath}` : "/");
+    if (login) {
+      const lastpath = localStorage.getItem("lastPath") || "/dashboard";
+      navigate(login ? `${lastpath}` : "/");
+    }
   }, [login]);
   const handelAddtrainer = (e) => {
     e.preventDefault();
@@ -111,13 +123,11 @@ const App = () => {
     e.preventDefault();
     const isExistingUser = userData.Data.some((user) => user.id === newUser.id);
     if (isExistingUser) {
-      setUserData((prev) => {
-        const updatedUser = prev.Data.map((user) =>
-          user.id == newUser.id ? newUser : user
-        );
-        setUserData((prev) => ({ ...prev, Data: updatedUser }));
-      });
-      toast.success("User Editted Succesfully!", { transition: Flip });
+      const updatedUser = userData.Data.map((user) =>
+        user.id == newUser.id ? newUser : user
+      );
+      setUserData({ ...userData, Data: updatedUser });
+      toast.success("User Edited Successfully!", { transition: Flip });
       navigate("/dashboard");
     } else {
       if (
@@ -137,6 +147,56 @@ const App = () => {
       }
     }
   };
+  const handelmemberShipDelete = (id) => {
+    if (window.confirm("Are you sure you want to delete")) {
+      setMembershipData((prev) => {
+        return {
+          ...prev,
+          Data: prev.Data.filter((membership) => membership.id !== id),
+        };
+      });
+    }
+  };
+  const handelAddMembership = (e) => {
+    e.preventDefault();
+
+    const benefitsArray = newMembership.benefits
+      .split(/[\s,]+/)
+      .map((item) => item.trim())
+      .filter(Boolean);
+
+    if (
+      newMembership.name.trim() !== "" &&
+      newMembership.price.trim() !== "" &&
+      newMembership.duration.trim() !== "" &&
+      newMembership.benefits.trim() !== ""
+    ) {
+      const updatedMembership = {
+        ...newMembership,
+        benefits: benefitsArray,
+      };
+
+      setMembershipData((prev) => ({
+        ...prev,
+        Data: [...prev.Data, updatedMembership],
+      }));
+
+      toast.success("Membership added Successfully!", { transition: Flip });
+
+      setNewMembership({
+        id: Math.floor(Math.random() * 1000),
+        name: "",
+        price: "",
+        duration: "",
+        benefits: "",
+      });
+
+      navigate("/dashboard");
+    } else {
+      toast.error("Please Fill All Detials!", { transition: Flip });
+    }
+  };
+
   return (
     <>
       <Routing
@@ -156,6 +216,12 @@ const App = () => {
         newUser={newUser}
         setNewUser={setNewUser}
         handelAddUser={handelAddUser}
+        membershipData={membershipData}
+        setMembershipData={setMembershipData}
+        handelmemberShipDelete={handelmemberShipDelete}
+        newMembership={newMembership}
+        setNewMembership={setNewMembership}
+        handelAddMembership={handelAddMembership}
       />
       <ToastContainer />
     </>

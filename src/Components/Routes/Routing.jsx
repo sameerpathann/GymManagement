@@ -12,6 +12,7 @@ import ProtectedRoute from "../Auth/Auth";
 import Dashboard from "../Dashboard";
 import NewTrrainerForm from "../Sections/NewTrrainerForm";
 import UserForm from "../UserForm";
+import MembershipForm from "../MembershipForm";
 
 const Routing = ({
   dashBoardCardDetails,
@@ -30,23 +31,30 @@ const Routing = ({
   newUser,
   setNewUser,
   handelAddUser,
+  membershipData,
+  setMembershipData,
+  handelmemberShipDelete,
+  newMembership,
+  setNewMembership,
+  handelAddMembership,
 }) => {
   const { pathname } = useLocation();
 
   return (
     <>
-      {pathname !== "/dashboard" && pathname !== "/Dashboard" ? <Header /> : ""}
+      {!pathname.toLowerCase().includes("/dashboard") && <Header />}
+
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/About" element={<Scection />} />
-        <Route path="/Classes" element={<OurClasses />} />
-        <Route path="/Schedule" element={<Schedule />} />
-        <Route path="/Contact" element={<Footer />} />
-        <Route path="/Signup" element={<Form />} />
-        <Route path="/Login" element={<Login />} />
+        <Route path="/about" element={<Scection />} />
+        <Route path="/classes" element={<OurClasses />} />
+        <Route path="/schedule" element={<Schedule />} />
+        <Route path="/contact" element={<Footer />} />
+        <Route path="/signup" element={<Form />} />
+        <Route path="/login" element={<Login />} />
 
         <Route
-          path="/Dashboard"
+          path="/dashboard"
           element={
             <ProtectedRoute>
               <Dashboard
@@ -61,6 +69,9 @@ const Routing = ({
                 handelTrainerDelete={handelTrainerDelete}
                 userData={userData}
                 handelUserDelete={handelUserDelete}
+                membershipData={membershipData}
+                setMembershipData={setMembershipData}
+                handelmemberShipDelete={handelmemberShipDelete}
               />
             </ProtectedRoute>
           }
@@ -113,6 +124,18 @@ const Routing = ({
                 handelAddUser={handelAddUser}
                 userData={userData}
                 editMode={true}
+              />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/addMembership"
+          element={
+            <ProtectedRoute>
+              <MembershipForm
+                newMembership={newMembership}
+                setNewMembership={setNewMembership}
+                handelAddMembership={handelAddMembership}
               />
             </ProtectedRoute>
           }

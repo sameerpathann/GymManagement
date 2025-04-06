@@ -11,6 +11,9 @@ const DashboardMain = ({
   handelTrainerDelete,
   userData,
   handelUserDelete,
+  membershipData,
+  setMembershipData,
+  handelmemberShipDelete,
 }) => {
   const sections = {
     1: DashBoardSection,
@@ -30,6 +33,9 @@ const DashboardMain = ({
           handelTrainerDelete={handelTrainerDelete}
           userData={userData}
           handelUserDelete={handelUserDelete}
+          membershipData={membershipData}
+          setMembershipData={setMembershipData}
+          handelmemberShipDelete={handelmemberShipDelete}
         />
       }
     </>

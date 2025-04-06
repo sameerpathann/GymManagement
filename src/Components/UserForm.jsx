@@ -5,18 +5,22 @@ const UserForm = ({
   newUser,
   setNewUser,
   handelAddUser,
-  userData = [],
+  userData = { Data: [] },
   editMode = false,
 }) => {
   const { id } = useParams();
+
   useEffect(() => {
     if (id) {
-      const user = userData.Data?.find((user) => user.id === parseInt(id));
+      const user = userData?.Data?.find((user) => user.id === parseInt(id));
+      console.log("chala");
       if (user) {
+        console.log("chala2");
         setNewUser(user);
       }
     }
   }, [userData, setNewUser, id]);
+
   return (
     <div className="w-full bg-zinc-300 h-screen flex items-center justify-center pt-5">
       <div className="w-[30%] bg-white pt-6 br rounded-lg overflow-hidden h-[75%]">
@@ -48,6 +52,7 @@ const UserForm = ({
             onChange={(e) =>
               setNewUser({ ...newUser, membershipType: e.target.value })
             }
+            value={newUser.membershipType}
             className="w-[90%] px-3 py-2 rounded-lg ring-2 ring-black  focus:ring-2 focus:ring-blue-400 outline-none"
           >
             <option value="">Select User plan</option>

@@ -17,6 +17,9 @@ const Dashboard = ({
   handelTrainerDelete,
   userData,
   handelUserDelete,
+  membershipData,
+  setMembershipData,
+  handelmemberShipDelete,
 }) => {
   return (
     <>
@@ -24,7 +27,7 @@ const Dashboard = ({
         <div className="w-[20%] br">
           <div className="w-[100%] h-[10vh] flex items-center justify-center">
             <h1 className="text-[1.5vw] font-semibold capitalize">
-              Hello Mr. {name}
+              {`Hello ${name ? `Mr. ${name}` : `Admin`}`}
             </h1>
           </div>
           <div
@@ -55,15 +58,16 @@ const Dashboard = ({
               text={"Add User"}
               path={"/addUser"}
             />
-            <DashBoardButton
-              color={"rgb(34, 197, 94)"}
-              text={"Add Payment"}
-              path={"/addPayment"}
-            />
+
             <DashBoardButton
               color={"rgb(249, 115, 22)"}
               text={"Add Membership"}
               path={"/addMembership"}
+            />
+            <DashBoardButton
+              color={"rgb(34, 197, 94)"}
+              text={"Add Payment"}
+              path={"/addPayment"}
             />
           </div>
           <div className="w-[100%] h-[30vh] px-3 py-6  flex items-center justify-center gap-4">
@@ -85,6 +89,9 @@ const Dashboard = ({
               handelTrainerDelete={handelTrainerDelete}
               userData={userData}
               handelUserDelete={handelUserDelete}
+              membershipData={membershipData}
+              setMembershipData={setMembershipData}
+              handelmemberShipDelete={handelmemberShipDelete}
             />
           </div>
         </div>

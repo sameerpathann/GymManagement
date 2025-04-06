@@ -6,6 +6,6 @@ const ProtectedRoute = ({ children }) => {
   if (user) {
     localStorage.setItem("lastPath", pathname);
   }
-  return user ? children : <Navigate to={"/"} />;
+  return user ? children : <Navigate to={"/"} replace />;
 };
 export default ProtectedRoute;

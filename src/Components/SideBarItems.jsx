@@ -8,7 +8,7 @@ const SideBarItems = ({ list, id, isClick }) => {
           list.id == isClick
             ? `bg-[#3b82f6]`
             : `bg-[#fff] text-black translate-x-2 hover:bg-[#d7d6d6] transition-colors duration-[0.2s]`
-        } h-[15%] rounded-md flex items-center gap-2  relative sidebar-items ease-out cursor-pointer ${id}`}
+        } h-[15%] rounded-md flex items-center gap-2 pl-2 relative sidebar-items ease-out cursor-pointer ${id}`}
         style={{ animationDelay: `${id * 0.2}s` }}
       >
         <div

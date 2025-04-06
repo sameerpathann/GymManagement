@@ -4,6 +4,7 @@ import { BsBoxSeam } from "react-icons/bs";
 import { IoBarbellSharp } from "react-icons/io5";
 import trainersData from "./TrainersData";
 import users from "./UserData";
+import membershipDetails from "./MembershipData";
 const totalitems = [
   {
     heading: "total Users",
@@ -12,12 +13,12 @@ const totalitems = [
   },
   {
     heading: "Total Revenue",
-    value: "$12,500",
+    value: `$${membershipDetails.totalRevenue}`,
     icon: (prop) => <BiDollar {...prop} size={"100%"} color="rgb(34,197,94)" />,
   },
   {
     heading: "Total Memberships",
-    value: 220,
+    value: membershipDetails.totalMemberships,
     icon: (prop) => (
       <BsBoxSeam {...prop} size={"70%"} color="rgb(249,115,22)" />
     ),
