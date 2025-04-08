@@ -159,41 +159,69 @@ const App = () => {
   };
   const handelAddMembership = (e) => {
     e.preventDefault();
-
-    const benefitsArray = newMembership.benefits
-      .split(/[\s,]+/)
-      .map((item) => item.trim())
-      .filter(Boolean);
-
-    if (
-      newMembership.name.trim() !== "" &&
-      newMembership.price.trim() !== "" &&
-      newMembership.duration.trim() !== "" &&
-      newMembership.benefits.trim() !== ""
-    ) {
+    const isExistingmemberShip = membershipData.Data?.some(
+      (membership) => membership.id === newMembership.id
+    );
+    if (isExistingmemberShip) {
+      const updatedmembership = membershipData.Data?.map((membership) =>
+        membership.id == newMembership.id
+          ? {
+              ...newMembership,
+              benefits: Array.isArray(newMembership.benefits)
+                ? newMembership.benefits
+                : newMembership.benefits
+                    .split(/[\s,]+/)
+                    .map((item) => item.trim())
+                    .filter(Boolean),
+            }
+          : membership
+      );
+      setMembershipData((prev) => ({ ...prev, Data: updatedmembership }));
+      toast.success("User Edited Successfully!", { transition: Flip });
+      navigate("/dashboard");
+    } else {
+      const benefitsArray = newMembership?.benefits
+        .split(/[\s,]+/)
+        .map((item) => item.trim())
+        .filter(Boolean);
       const updatedMembership = {
         ...newMembership,
         benefits: benefitsArray,
       };
-
       setMembershipData((prev) => ({
         ...prev,
-        Data: [...prev.Data, updatedMembership],
+        Data: newMembership,
       }));
+      if (
+        newMembership.name.trim() !== "" &&
+        newMembership.price.trim() !== "" &&
+        newMembership.duration.trim() !== "" &&
+        newMembership.benefits.trim() !== ""
+      ) {
+        const updatedMembership = {
+          ...newMembership,
+          benefits: benefitsArray,
+        };
 
-      toast.success("Membership added Successfully!", { transition: Flip });
+        setMembershipData((prev) => ({
+          ...prev,
+          Data: [...prev.Data, updatedMembership],
+        }));
 
-      setNewMembership({
-        id: Math.floor(Math.random() * 1000),
-        name: "",
-        price: "",
-        duration: "",
-        benefits: "",
-      });
+        toast.success("Membership added Successfully!", { transition: Flip });
 
-      navigate("/dashboard");
-    } else {
-      toast.error("Please Fill All Detials!", { transition: Flip });
+        setNewMembership({
+          id: Math.floor(Math.random() * 1000),
+          name: "",
+          price: "",
+          duration: "",
+          benefits: "",
+        });
+
+        navigate("/dashboard");
+      } else {
+        toast.error("Please Fill All Detials!", { transition: Flip });
+      }
     }
   };
 

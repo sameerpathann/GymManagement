@@ -1,7 +1,7 @@
 import React from "react";
-
+import UnderDevelopment from "./UnderDevelopment";
 const SettingsSection = () => {
-  return <div>SettingsSection</div>;
+  return <UnderDevelopment />;
 };
 
 export default SettingsSection;

@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import UnderDevelopment from "./UnderDevelopment";
 
 const PaymentSection = () => {
-  return (
-    <div>PaymentSection</div>
-  )
-}
+  return <UnderDevelopment />;
+};
 
-export default PaymentSection
+export default PaymentSection;

@@ -1,10 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 const MembershipForm = ({
   newMembership,
   setNewMembership,
   handelAddMembership,
+  isEditMode = false,
+  membershipData = [],
 }) => {
+  const { id } = useParams();
+  useEffect(() => {
+    if (id) {
+      const membership = membershipData.Data?.find(
+        (membership) => membership.id === parseInt(id)
+      );
+      if (membership) {
+        setNewMembership(membership);
+      }
+    }
+  }, [membershipData, setNewMembership, id]);
+
   return (
     <div className="w-full bg-zinc-300 h-screen flex items-center justify-center pt-5">
       <div className="w-[30%] bg-white pt-6 br rounded-lg overflow-hidden h-[75%]">

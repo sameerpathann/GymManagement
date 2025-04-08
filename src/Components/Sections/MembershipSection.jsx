@@ -33,8 +33,8 @@ const MembershipSection = ({
               <td>
                 {membership.benefits && Array.isArray(membership.benefits) ? (
                   membership.benefits.map((b, i) => (
-                    <ul>
-                      <li key={i}>{b}</li>
+                    <ul key={i}>
+                      <li>{b}</li>
                     </ul>
                   ))
                 ) : (
@@ -43,7 +43,7 @@ const MembershipSection = ({
               </td>
 
               <td>
-                <Link>
+                <Link to={`/editMembership/${membership.id}`}>
                   {" "}
                   <button className="bg-[rgb(59,130,246)] hover:bg-[rgb(94,139,211)] px-2 py-2 rounded-lg text-[1.2vw] text-white font-semibold">
                     <BiEdit />

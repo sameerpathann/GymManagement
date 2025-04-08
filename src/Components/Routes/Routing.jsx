@@ -13,6 +13,7 @@ import Dashboard from "../Dashboard";
 import NewTrrainerForm from "../Sections/NewTrrainerForm";
 import UserForm from "../UserForm";
 import MembershipForm from "../MembershipForm";
+import UnderDevelopment from "../Sections/UnderDevelopment";
 
 const Routing = ({
   dashBoardCardDetails,
@@ -137,6 +138,28 @@ const Routing = ({
                 setNewMembership={setNewMembership}
                 handelAddMembership={handelAddMembership}
               />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/editMembership/:id"
+          element={
+            <ProtectedRoute>
+              <MembershipForm
+                membershipData={membershipData}
+                isEditMode={true}
+                newMembership={newMembership}
+                setNewMembership={setNewMembership}
+                handelAddMembership={handelAddMembership}
+              />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/addPayment"
+          element={
+            <ProtectedRoute>
+              <UnderDevelopment />
             </ProtectedRoute>
           }
         />
