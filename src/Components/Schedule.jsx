@@ -51,7 +51,7 @@ const Schedule = () => {
             <table className="table-auto w-[100%] h-[100%] border-table ">
               <thead>
                 <tr className="border-table">
-                  <th className="text-[1.2vw] text-white w-[20%] py-14 border-table">
+                  <th className="text-[1.2vw] text-white w-[20%] py-5 md:py-10 border-table">
                     Fitness Class
                   </th>
                   <th
@@ -68,7 +68,7 @@ const Schedule = () => {
               </thead>
               <tbody>
                 <tr className="border-table">
-                  <td className="text-[1.2vw] border-table font-semibold text-white w-[20%] text-center">
+                  <td className="text-[1.2vw] h-[10%] border-table font-semibold text-white w-[20%] text-center">
                     Muscle Traning
                   </td>
                   <td className="text-[1.2vw] border-table font-semibold text-white w-[20%]"></td>
@@ -78,34 +78,34 @@ const Schedule = () => {
                   </td>
                 </tr>
                 <tr>
-                  <td className="text-[1.2vw] border-table font-semibold text-white w-[20%] text-center">
+                  <td className="text-[1.2vw] h-[10%] border-table font-semibold text-white w-[20%] text-center">
                     Body Building
                   </td>
-                  <td className="text-[1.2vw] border-table font-semibold text-white w-[20%]"></td>
-                  <td className="text-[1.2vw] border-table font-semibold text-white w-[20%] text-center">
+                  <td className="text-[1.2vw] h-[10%]  border-table font-semibold text-white w-[20%]"></td>
+                  <td className="text-[1.2vw] h-[10%] border-table font-semibold text-white w-[20%] text-center">
                     2:00PM - 3:30PM
                   </td>
-                  <td className="text-[1.2vw] border-table font-semibold text-white w-[20%] text-center">
+                  <td className="text-[1.2vw] h-[10%] border-table font-semibold text-white w-[20%] text-center">
                     Boyd C. Harris
                   </td>
                 </tr>
                 <tr>
-                  <td className="text-[1.2vw] border-table font-semibold text-white w-[20%] text-center">
+                  <td className="text-[1.2vw] h-[10%] border-table font-semibold text-white w-[20%] text-center">
                     Yoga Training Class
                   </td>
-                  <td className="text-[1.2vw] border-table font-semibold text-white w-[20%]"></td>
-                  <td className="text-[1.2vw] border-table font-semibold text-white w-[20%] text-center"></td>
-                  <td className="text-[1.2vw] border-table font-semibold text-white w-[20%] text-center">
+                  <td className="text-[1.2vw] h-[10%] border-table font-semibold text-white w-[20%]"></td>
+                  <td className="text-[1.2vw] h-[10%] border-table font-semibold text-white w-[20%] text-center"></td>
+                  <td className="text-[1.2vw] h-[10%] border-table font-semibold text-white w-[20%] text-center">
                     Hector T. Daigle
                   </td>
                 </tr>
                 <tr>
-                  <td className="text-[1.2vw] border-table font-semibold text-white w-[20%] text-center">
+                  <td className="text-[1.2vw] h-[10%] border-table font-semibold text-white w-[20%] text-center">
                     Advance Training
                   </td>
-                  <td className="text-[1.2vw] border-table font-semibold text-white w-[20%]"></td>
-                  <td className="text-[1.2vw] border-table font-semibold text-white w-[20%] text-center"></td>
-                  <td className="text-[1.2vw] border-table font-semibold text-white w-[20%] text-center">
+                  <td className="text-[1.2vw] h-[10%] border-table font-semibold text-white w-[20%]"></td>
+                  <td className="text-[1.2vw] h-[10%] border-table font-semibold text-white w-[20%] text-center"></td>
+                  <td className="text-[1.2vw] h-[10%] border-table font-semibold text-white w-[20%] text-center">
                     Bret D. Bowers
                   </td>
                 </tr>

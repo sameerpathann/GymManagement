@@ -178,7 +178,7 @@ const App = () => {
       );
       setMembershipData((prev) => ({ ...prev, Data: updatedmembership }));
       toast.success("User Edited Successfully!", { transition: Flip });
-      navigate("/dashboard");
+      navigate("/dashboard");7
     } else {
       const benefitsArray = newMembership?.benefits
         .split(/[\s,]+/)

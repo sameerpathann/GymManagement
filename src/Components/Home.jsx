@@ -12,7 +12,7 @@ import Footer from "./Footer";
 const Home = () => {
   return (
     <>
-      <div className="w-[100%] h-screen  relative overflow-hidden">
+      <div className="w-[100%] h-screen relative overflow-hidden">
         <Video />
         <Shadow />
         <Header />
