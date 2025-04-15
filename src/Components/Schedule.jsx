@@ -1,6 +1,6 @@
 import React from "react";
 import lineimg from "../assets/line-dec.png";
-import Scheduleimg from "../assets/Schedule-bg.jpg";
+import Scheduleimg from "../assets/schedule-bg.jpg";
 const Schedule = () => {
   return (
     <div className="w-[100%] min-h-[150vh] bg-red-400">
