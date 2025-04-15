@@ -55,7 +55,8 @@ const Header = () => {
               "/addUser",
             ].includes(pathname) ||
             pathname.startsWith("/EditTrainer") ||
-            pathname.startsWith("/EditUser")
+            pathname.startsWith("/EditUser") ||
+            pathname === "/addMembership"
               ? "text-black"
               : "text-white"
           }`}

@@ -7,7 +7,6 @@ import trainersData from "./Components/Hardcore/TrainersData";
 import users from "./Components/Hardcore/UserData";
 import membershipDetails from "./Components/Hardcore/MembershipData";
 const App = () => {
-  // localStorage.clear("");
   const [dashBoardCardDetails, setDashboardCardDetails] = useState(totalitems);
   const [trainerDetails, setTrainersDetails] = useState(trainersData);
   const [newTrainer, setNewTrainer] = useState({
@@ -159,59 +158,57 @@ const App = () => {
   };
   const handelAddMembership = (e) => {
     e.preventDefault();
+
     const isExistingmemberShip = membershipData.Data?.some(
       (membership) => membership.id === newMembership.id
     );
+
+    const benefitsArray = newMembership?.benefits
+      ?.split(/[\s,]+/)
+      .map((item) => item.trim())
+      .filter(Boolean);
+
     if (isExistingmemberShip) {
-      const updatedmembership = membershipData.Data?.map((membership) =>
-        membership.id == newMembership.id
+      const updatedMemberships = membershipData.Data.map((membership) =>
+        membership.id === newMembership.id
           ? {
               ...newMembership,
               benefits: Array.isArray(newMembership.benefits)
                 ? newMembership.benefits
-                : newMembership.benefits
-                    .split(/[\s,]+/)
-                    .map((item) => item.trim())
-                    .filter(Boolean),
+                : benefitsArray,
             }
           : membership
       );
-      setMembershipData((prev) => ({ ...prev, Data: updatedmembership }));
-      toast.success("User Edited Successfully!", { transition: Flip });
-      navigate("/dashboard");7
-    } else {
-      const benefitsArray = newMembership?.benefits
-        .split(/[\s,]+/)
-        .map((item) => item.trim())
-        .filter(Boolean);
-      const updatedMembership = {
-        ...newMembership,
-        benefits: benefitsArray,
-      };
+
       setMembershipData((prev) => ({
         ...prev,
-        Data: newMembership,
+        Data: updatedMemberships,
       }));
+
+      toast.success("Membership Edited Successfully!", { transition: Flip });
+      navigate("/dashboard");
+    } else {
       if (
         newMembership.name.trim() !== "" &&
         newMembership.price.trim() !== "" &&
         newMembership.duration.trim() !== "" &&
         newMembership.benefits.trim() !== ""
       ) {
-        const updatedMembership = {
+        const newEntry = {
           ...newMembership,
+          id: Math.floor(Math.random() * 1000),
           benefits: benefitsArray,
         };
 
         setMembershipData((prev) => ({
           ...prev,
-          Data: [...prev.Data, updatedMembership],
+          Data: [...(prev?.Data || []), newEntry],
         }));
 
-        toast.success("Membership added Successfully!", { transition: Flip });
+        toast.success("Membership Added Successfully!", { transition: Flip });
 
         setNewMembership({
-          id: Math.floor(Math.random() * 1000),
+          id: "",
           name: "",
           price: "",
           duration: "",
@@ -220,7 +217,7 @@ const App = () => {
 
         navigate("/dashboard");
       } else {
-        toast.error("Please Fill All Detials!", { transition: Flip });
+        toast.error("Please Fill All Details!", { transition: Flip });
       }
     }
   };

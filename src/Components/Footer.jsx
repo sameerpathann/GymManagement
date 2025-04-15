@@ -4,9 +4,7 @@ import img from "../assets/contact-bg.jpg";
 const Footer = () => {
   return (
     <div className="w-full mt-16 flex flex-col gap-10">
-      {/* Map + Contact Section */}
       <div className="w-full flex flex-col lg:flex-row gap-6">
-        {/* Map */}
         <div className="w-full lg:w-1/2 h-[300px] sm:h-[400px] lg:h-[85vh]">
           <iframe
             className="w-full h-full"
@@ -18,7 +16,6 @@ const Footer = () => {
           />
         </div>
 
-        {/* Contact Form */}
         <div className="w-full lg:w-1/2 relative h-auto lg:h-[85vh] flex items-center justify-center">
           <img
             src={img}
@@ -60,7 +57,6 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Copyright Section */}
       <div className="w-full py-6 bg-white flex justify-center items-center">
         <p className="text-center text-xs sm:text-sm md:text-base px-4 max-w-[600px] leading-relaxed">
           Copyright © 2020 Training Studio - Designed by{" "}

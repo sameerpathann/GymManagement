@@ -12,7 +12,7 @@ const SideBarItems = ({ list, id, isClick }) => {
         style={{ animationDelay: `${id * 0.2}s` }}
       >
         <div
-          className={`w-[10%] h-[100%]  flex items-center justify-center ${
+          className={`md:w-[10%]  w-[5%] h-[100%]  flex items-center justify-center ${
             list.id == isClick ? `text-white` : `text-black ${id}`
           }`}
         >
@@ -22,7 +22,7 @@ const SideBarItems = ({ list, id, isClick }) => {
           <h1
             className={`${
               list.id == isClick ? `text-white` : `text-black`
-            } font-semibold text-[1.2vw] ${id}`}
+            } font-semibold text-[3.5vw] sm:text-[2vw] md:text-[1.2vw] lg:text-[1vw] ${id}`}
           >
             {list.heading}
           </h1>
